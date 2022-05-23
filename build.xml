@@ -148,7 +148,7 @@
     <copy todir="${dist}/doc/api">
       <fileset dir="${apidoc}"/>
     </copy>
-    <copy file="README" todir="${dist}"/>
+    <copy file="README.md" todir="${dist}"/>
     <tstamp>
       <format property="packageTime" pattern="hh.mm_dd-MM-yyyy"/>
     </tstamp>
