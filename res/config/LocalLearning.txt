@@ -5,12 +5,18 @@ NUMEVALS 10 #number of evaluations
 SAMPLING uniform #uniform/iterative default is uniform
 #NORMALIZATION 2 #0: none, 1: normalize, 2: standardize not required
 
+LAMBDA 1E-4 #regularization
+ETA 1.0/LAMBDA #learning rate
+ISTIME 1 #dynamic learning rate
+
 dbReader gossipLearning.utils.DataBaseReader
 trainingFile res/db/iris_versicolor_virginica_train.dat #training set
 evaluationFile res/db/iris_versicolor_virginica_eval.dat #evaluation/test set
 
 learner.PegasosSVM gossipLearning.models.learning.P2Pegasos #learning method
-learner.PegasosSVM.lambda 0.01 #parameters of the learning method
+learner.PegasosSVM.lambda LAMBDA #parameters of the learning method
+learner.PegasosSVM.eta ETA
+learner.PegasosSVM.is_time ISTIME
 
 evaluators gossipLearning.evaluators.RMSError #type of evaluation
 printPrecision 4 #evaluation precision (number of floating points)
