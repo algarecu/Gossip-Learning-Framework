@@ -40,11 +40,19 @@ the project.)
 
 Running a predefined simulation
 ---------------------------------------
+To run a federated simulation on the spambase dataset type the following code in the project directory:
+
+`export classpath="bin/gossipLearning.jar:."`
+`java -cp $classpath gossipLearning.main.FederatedLearning res/config/FederatedConfig.txt`
+
+
 To run a simulation applying one of the predefined scenarios on the 
 [Iris](http://archive.ics.uci.edu/ml/datasets/Iris) dataset you have to type the 
-following code in the project directory: 
+following code in the project directory:
+ 
 `export classpath="bin/gossipLearning.jar:."`
 `java -cp $classpath gossipLearning.main.LocalRun res/config/LocalLearning.txt`. 
+
 This will run a local SGD (but not a P2P) learning based on the defined configuration file `LocalLearning.txt`.
 
 The meaning of the configuration file:
@@ -260,4 +268,5 @@ citations are
 	  keywords = {P2P, gossip, bagging, online learning, stochastic gradient descent, random walk},
 	  year = {2013},
 	}
+
 
